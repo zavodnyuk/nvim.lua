@@ -9,6 +9,9 @@ lsp.setup()
 -- You need to setup `cmp` after lsp-zero
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer=0})
+vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, {buffer=0})
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, {buffer=0})
 
 cmp.setup({
   mapping = {
