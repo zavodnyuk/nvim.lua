@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>op", vim.cmd.Ex)
-vim.keymap.set("n", ";;", ":")
+vim.keymap.set("n", ";;", ":")vim.keymap.set("n", ";;", ":")
+vim.keymap.set("n", "nh", ":noh<CR>")vim.keymap.set("n", ";;", ":")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
