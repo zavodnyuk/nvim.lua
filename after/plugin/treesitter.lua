@@ -1,6 +1,6 @@
-require'nvim-treesitter.install'.compilers = { "zig", "c", "gcc", "clang", "g++", "clang++" }
+require'nvim-treesitter.install'.compilers = { "clang", "c", "zig", "gcc", "g++", "clang++" }
 require'nvim-treesitter.configs'.setup {
-	ensure_installed = { "lua", "scala", "vim", "vimdoc", "query", "javascript", "typescript", "rust" },
+	ensure_installed = { "scala", "vim", "vimdoc", "query", "javascript", "typescript", "rust" },
 
 	sync_install = false,
 	auto_install = true,

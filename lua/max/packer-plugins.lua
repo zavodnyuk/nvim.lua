@@ -8,7 +8,11 @@ return require('packer').startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
-	use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
+	use {
+		'folke/todo-comments.nvim',
+		requires = {'nvim-lua/plenary.nvim' },
+	}
+	use ({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
@@ -22,17 +26,32 @@ return require('packer').startup(function(use)
 	use 'mbbill/undotree'
 	use 'airblade/vim-gitgutter'
 
-	use 'wakatime/vim-wakatime' -- Probably does not work
-	use 'Yggdroot/indentLine'
+	use 'wakatime/vim-wakatime'
+	use "lukas-reineke/indent-blankline.nvim"
+	use "Darazaki/indent-o-matic"
 	use 'kien/rainbow_parentheses.vim' -- Probably does not work
 	use ({'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' }})
 
 	use({ 'rose-pine/neovim', as = 'rose-pine', config = function()
 		--	use 'audibleblink/hackthebox.vim'
-		vim.cmd('colorscheme rose-pine')
+		vim.cmd('colorscheme habamax')
 	end
-})
+	})
+	-- FIXME: This one does not show bars
+	use({
+		"utilyre/barbecue.nvim",
+		tag = "*",
+		requires = {
+			"SmiteshP/nvim-navic",
+			"nvim-tree/nvim-web-devicons",
+		},
+		after = "nvim-web-devicons",
+		config = function()
+			require("barbecue").setup()
+		end,
+	})
 	use 'mhinz/vim-startify'
+	use 'KabbAmine/yowish.vim'
 
 	use 'tpope/vim-fugitive'
 	use {
