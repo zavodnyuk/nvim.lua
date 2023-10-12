@@ -20,3 +20,5 @@ vim.opt.smartcase = true
 
 vim.opt.ignorecase = true
 vim.opt.updatetime = 400
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
